@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from "mobx-react";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Store from "./store/Store";
+window.store = Store;
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider store={Store}>
+        <App />
+    </Provider>,
   document.getElementById('root')
 );
 
